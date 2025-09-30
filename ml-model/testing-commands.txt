@@ -1,0 +1,46 @@
+ Test Commands for ECS ML Model:
+
+  # 1. Health Check
+  curl -X GET "http://semantic-search-prod-pub-alb-1926516046.us-east-1.elb.amazonaws.com/embed/health" -v
+
+  # 2. Basic Embedding Test
+  curl -X POST "http://semantic-search-prod-pub-alb-1926516046.us-east-1.elb.amazonaws.com/embed" \
+    -H "Content-Type: application/json" \
+    -d '{"texts": ["smartphone with good camera"]}'
+
+  # 3. Multiple Text Embeddings
+  curl -X POST "http://semantic-search-prod-pub-alb-1926516046.us-east-1.elb.amazonaws.com/embed" \
+    -H "Content-Type: application/json" \
+    -d '{"texts": ["laptop computer", "wireless headphones", "gaming mouse"]}'
+
+  # 4. Empty Text Handling
+  curl -X POST "http://semantic-search-prod-pub-alb-1926516046.us-east-1.elb.amazonaws.com/embed" \
+    -H "Content-Type: application/json" \
+    -d '{"texts": []}'
+
+  # 5. Large Text Test
+  curl -X POST "http://semantic-search-prod-pub-alb-1926516046.us-east-1.elb.amazonaws.com/embed" \
+    -H "Content-Type: application/json" \
+    -d '{"texts": ["This is a very long product description with many technical specifications and features that customers would 
+  want to search for in an e-commerce platform"]}'
+
+  # 6. Special Characters Test
+  curl -X POST "http://semantic-search-prod-pub-alb-1926516046.us-east-1.elb.amazonaws.com/embed" \
+    -H "Content-Type: application/json" \
+    -d '{"texts": ["iPhone 15 Pro Max 256GB - Space Black $1,199.99"]}'
+
+  To get your ALB DNS name, run:
+  aws elbv2 describe-load-balancers --region us-east-1 --query 'LoadBalancers[?contains(LoadBalancerName, 
+  `semantic-search-prod-public-alb`)].DNSName' --output text
+
+  Expected Responses:
+  - Health: {"status":"healthy","model_loaded":true,"model_name":"sentence-transformers/all-MiniLM-L6-v2"}
+  - Embeddings: {"embeddings":[[384 float values]],"model_name":"...","dimension":384}
+
+⏺ These curl commands will test:
+  1. Health endpoint - Verify the service is running and model is loaded
+  2. Single embedding - Basic functionality test
+  3. Batch embeddings - Multiple texts at once
+  4. Edge cases - Empty input handling
+  5. Large text - Performance with longer content
+  6. Special characters - Real-world e-commerce data

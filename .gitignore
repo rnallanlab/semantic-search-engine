@@ -1,0 +1,60 @@
+# Sensitive files - NEVER commit
+.env
+*.pem
+*.key
+credentials.json
+
+# Build artifacts
+target/
+*.jar
+*.class
+*.war
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform.lock.hcl
+deployment-plan.txt
+deployment-output.plan
+
+# IDE
+.vscode/
+.idea/
+*.iml
+.DS_Store
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Node modules (if any)
+node_modules/
+
+# Test coverage
+.coverage
+htmlcov/
+coverage/
+
+# ML Models (large files)
+*.bin
+*.pt
+*.pth
+fine_tuned_*/
+
+# Data files (if large)
+*.csv

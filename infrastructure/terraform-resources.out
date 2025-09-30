@@ -1,0 +1,13 @@
+aws_api_gateway_api_key.main
+aws_api_gateway_deployment.main
+aws_api_gateway_integration.health
+aws_api_gateway_integration.ml_model
+aws_api_gateway_integration.search_api
+aws_api_gateway_stage.main
+aws_api_gateway_usage_plan.main
+aws_api_gateway_usage_plan_key.main
+aws_api_gateway_vpc_link.main
+aws_db_instance.postgres
+aws_ecs_service.ml_model
+aws_ecs_service.search_api
+aws_ecs_task_definition.search_api

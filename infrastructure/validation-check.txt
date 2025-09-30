@@ -1,0 +1,18 @@
+
+[0m[1m[31mPlanning failed.[0m[1m Terraform encountered an error while generating this plan.[0m
+
+[0m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mNo valid credential sources found[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  with provider["registry.terraform.io/hashicorp/aws"],
+[31m│[0m [0m  on main.tf line 11, in provider "aws":
+[31m│[0m [0m  11: provider "aws" [4m{[0m[0m
+[31m│[0m [0m
+[31m│[0m [0mPlease see https://registry.terraform.io/providers/hashicorp/aws
+[31m│[0m [0mfor more information about providing credentials.
+[31m│[0m [0m
+[31m│[0m [0mError: failed to refresh cached credentials, no EC2 IMDS role found,
+[31m│[0m [0moperation error ec2imds: GetMetadata, request canceled, context deadline
+[31m│[0m [0mexceeded
+[31m│[0m [0m
+[31m╵[0m[0m

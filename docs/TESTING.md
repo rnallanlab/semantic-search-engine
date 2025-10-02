@@ -127,15 +127,14 @@ curl -X POST "http://<ALB_URL>/api/v1/search" \
 ### 3.3 Search with Filters
 
 ```bash
-# Search with category filter
+# Search with price and rating filters
 curl -X POST "http://<ALB_URL>/api/v1/search" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: <YOUR_API_KEY>" \
   -d '{
     "query": "laptop",
-    "category": "Electronics",
-    "minPrice": 500,
-    "maxPrice": 2000,
+    "minPrice": 10,
+    "maxPrice": 100,
     "minRating": 4.0,
     "limit": 10
   }' | jq .

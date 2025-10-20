@@ -27,7 +27,7 @@ This project implements a complete semantic search engine that understands the m
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  Data Pipeline  │───▶│   ML Model      │◀───│   Search API    │
+│  Data Pipeline  │    │   ML Model      │◀───│   Search API    │
 │  (Python)       │    │   (FastAPI)     │    │   (Spring Boot) │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                      │                       │
